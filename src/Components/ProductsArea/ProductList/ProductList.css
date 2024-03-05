@@ -1,0 +1,10 @@
+.ProductList {
+    position: relative;
+    margin-top: 5%;
+}
+
+.ProductList .newBtn {
+    position: absolute;
+    right: 20px;
+    top: -20px;
+}

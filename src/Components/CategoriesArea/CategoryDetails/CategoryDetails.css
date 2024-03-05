@@ -1,0 +1,24 @@
+.CategoryDetails {
+	
+}
+.CategoryDetails {
+	display: flex;
+    flex-direction: column;
+    width: 300px;
+    background-image: linear-gradient(90deg, lightgreen, white);
+    margin: 10% auto;
+    padding: 10px;
+    border: 1px solid;
+    border-radius: 10px;
+    box-shadow: 10px 10px 10px;
+    text-align: left;
+}
+
+.CategoryDetails img {
+    width: 200px;
+    border: 1px solid;
+    border-radius: 10px;
+    vertical-align: middle;
+}
+
+

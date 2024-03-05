@@ -1,0 +1,22 @@
+.UpdateProduct {
+	
+}
+
+.UpdateProduct form{
+
+    width: 300px;
+    border: 1px solid;
+    border-radius: 10px;
+    box-shadow: 10px 10px 10px;
+    margin: 20px auto;
+    padding: 2%;
+    text-align: left;
+    
+}
+
+.UpdateProduct input, .UpdateProduct button{
+    width: 100%;
+    box-sizing: border-box;
+    margin-bottom: 15px;
+    border-radius: 5px;
+}
