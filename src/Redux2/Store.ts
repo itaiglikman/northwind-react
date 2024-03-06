@@ -1,6 +1,7 @@
 import { configureStore } from "@reduxjs/toolkit";
 import { AppState } from "./AppState";
 import { suppliersReducersContainer } from "./SuppliersSlice";
+import { authActionsCreator, authReducersContainer } from "./AuthSlice";
 
 // ________________________________________
 // REDUX - using new version - 
@@ -12,7 +13,9 @@ import { suppliersReducersContainer } from "./SuppliersSlice";
 // creating the application store - the redux manager object:
 export const appStore = configureStore<AppState>({
     reducer: {
-        suppliers: suppliersReducersContainer
+        // take the name from AppState.ts
+        suppliers: suppliersReducersContainer,
+        user: authReducersContainer
         // reducers of other slices...
     }
 })

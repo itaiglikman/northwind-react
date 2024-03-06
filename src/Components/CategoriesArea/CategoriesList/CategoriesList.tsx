@@ -1,18 +1,14 @@
 import { useEffect, useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { NavLink, useNavigate } from "react-router-dom";
 import CategoryModel from "../../../Models/CategoryModel";
 import categoriesService from "../../../Services/CategoriesService";
 import notifyService from "../../../Services/NotifyService";
 import "./CategoriesList.css";
-import useUserAndSubscribe from "../../../Utils/UseUser";
-import { NavLink } from "react-router-dom";
+import appConfig from "../../../Utils/AppConfig";
 
 function CategoriesList(): JSX.Element {
 
     const [categories, setCategories] = useState<CategoryModel[]>([]);
-
-    //custom hook for setting local state and subscribe for changes:
-    const user = useUserAndSubscribe();
     const navigate = useNavigate();
 
     useEffect(() => {
@@ -43,7 +39,7 @@ function CategoriesList(): JSX.Element {
                         <tr key={c.id}>
                             <td>{c.name}</td>
                             <td>{c.description}</td>
-                            <td><img src={"http://localhost:3030/api/categories/images/" + c.imageName} /></td>
+                            <td><img src={appConfig.categoriesUrl + "images/" + c.imageName} /></td>
                             <td><NavLink to={"/categories/details/" + c.id}>ℹ️</NavLink></td>
                         </tr>)}
                 </tbody>

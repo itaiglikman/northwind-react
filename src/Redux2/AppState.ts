@@ -13,7 +13,8 @@ export type AppState = {
 
     // first slice - array of suppliers:
     suppliers: SupplierModel[];
-
-    // second slice...
-    // user: UserModel;
+    
+    // second slice - the user for auth slice:
+    // User:
+    user: UserModel;
 }

@@ -23,6 +23,7 @@ function Routing(): JSX.Element {
             <Route path="/products" element={<ProductList />} />
             <Route path="/employees" element={<EmployeesList />} />
             <Route path="/about" element={<About />} />
+            <Route path="/about/contact-us" element={<About />} />
             <Route path="/products/details/:id" element={<ProductDetails />} />
             <Route path="/products/new" element={<AddProduct />} />
             <Route path="/products/update/:id" element={<UpdateProduct />} />

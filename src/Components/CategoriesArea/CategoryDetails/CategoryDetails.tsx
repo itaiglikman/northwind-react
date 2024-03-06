@@ -3,18 +3,15 @@ import { NavLink, useNavigate, useParams } from "react-router-dom";
 import CategoryModel from "../../../Models/CategoryModel";
 import categoriesService from "../../../Services/CategoriesService";
 import notifyService from "../../../Services/NotifyService";
-import useUserAndSubscribe from "../../../Utils/UseUser";
 import "./CategoryDetails.css";
+import appConfig from "../../../Utils/AppConfig";
 
 function CategoryDetails(): JSX.Element {
 
-    //custom hook for setting local state and subscribe for changes:
-    const user = useUserAndSubscribe();
+    const [category, setCategory] = useState<CategoryModel>();
     const navigate = useNavigate();
     let params = useParams();
     let id = +params.id;
-
-    const [category, setCategory] = useState<CategoryModel>();
 
     useEffect(() => {
         categoriesService.getOneCategory(id)
@@ -31,7 +28,7 @@ function CategoryDetails(): JSX.Element {
             <span>Name: {category?.name}</span>
             <span>Description: {category?.description}</span>
             <span>
-                <img src={"http://localhost:3030/api/categories/images/" + category?.imageName} />
+                <img src={appConfig.categoriesUrl + "images/" + category?.imageName} />
             </span>
             <NavLink to={"/categories"}>Back</NavLink>
         </div>

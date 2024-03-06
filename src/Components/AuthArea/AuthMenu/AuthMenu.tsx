@@ -3,11 +3,23 @@ import authService from "../../../Services/AuthService";
 import notifyService from "../../../Services/NotifyService";
 import useUserAndSubscribe from "../../../Utils/UseUser";
 import "./AuthMenu.css";
+import { useSelector } from "react-redux";
+import { AppState } from "../../../Redux2/AppState";
+import UserModel from "../../../Models/UserModel";
 
 function AuthMenu(): JSX.Element {
+// __________
+// REDUX:
+// __________
+//custom hook for setting local state and subscribe for changes:
+// const user = useUserAndSubscribe();
 
-    //custom hook for setting local state and subscribe for changes:
-    const user = useUserAndSubscribe();
+// __________
+// REDUX TOOLKIT:
+// __________
+    //react-redux hook for setting local state and subscribe for changes:
+    //                                  get     , return
+    const user: UserModel = useSelector<AppState, UserModel>(appState => appState.user);
 
     // Logout user:
     function logoutUser() {
@@ -19,7 +31,7 @@ function AuthMenu(): JSX.Element {
     if (user) return (
         <div className="AuthMenu">
             <span>hello {user.firstName} | </span>
-            <button onClick={logoutUser}>Logout</button>
+            <NavLink to="/home" onClick={logoutUser}>Logout</NavLink>
         </div>
     )
 

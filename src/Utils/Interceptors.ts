@@ -7,8 +7,17 @@ class Interceptors {
         // registering to request interceptors:
         axios.interceptors.request.use(requestObject => {
             // request object containing data sent with any request.
+            // _____________
+            // REDUX:
+            // let token = authStore.getState().token;
+            // _____________
+            
+            // _____________
+            // REDUX TOOLKIT:
+            let token = localStorage.getItem("token");
+            // _____________
+            
             // if token exist & request demands auth header - add headers:
-            let token = authStore.getState().token;
             if (token) 
                 requestObject.headers.Authorization = "Bearer " + token;
 

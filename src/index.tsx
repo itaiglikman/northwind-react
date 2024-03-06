@@ -8,7 +8,7 @@ import { appStore } from './Redux2/Store';
 import interceptors from './Utils/Interceptors';
 
 // Register interceptors for adding token in request:
-// interceptors.create();
+interceptors.create();
 
 const root = ReactDOM.createRoot(
     document.getElementById('root') as HTMLElement

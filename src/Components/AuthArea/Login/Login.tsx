@@ -25,9 +25,6 @@ function Login(): JSX.Element {
 
             <form onSubmit={handleSubmit(send)}>
 
-                <label>Username:</label>
-                <input type="string" {...register("username")} />
-
                 <label>Email:</label>
                 <input type="string" {...register("email")} />
 

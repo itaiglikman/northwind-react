@@ -10,7 +10,6 @@ import SupplierModel from "../Models/SupplierModel";
 // Managing a piece/slice of the data in the app:
 
 // reducer for adding all suppliers into the global state:
-
 // payload: suppliers array to add to the global state:
 function initAll(currentState: SupplierModel[], action: PayloadAction<SupplierModel[]>): SupplierModel[] {
     return action.payload;
